@@ -1,4 +1,34 @@
-public void remove(String s) {
+public class Lista {
+    Nodo root;
+
+    public Lista() {
+        root = null;
+    }
+
+    public void addCoda(Nodo n) {
+        if (root == null) {
+            root = n;
+        } else {
+            Nodo temp = root;
+            while (temp.getNext() != null) {
+                temp = temp.getNext();
+            }
+            temp.setNext(n);
+        }
+    }
+
+    public void addTesta(Nodo n) {
+        Nodo temp = root;
+        root = n;
+        n.setNext(temp);
+    }
+
+    public void add(String s) {
+        Nodo n = new Nodo(s);
+        addTail(n);
+    }
+
+    public void remove(String s) {
         if (root == null) return;
 
         if (!exists(s)) return;
@@ -20,8 +50,7 @@ public void remove(String s) {
         }
     }
 
-
-public boolean exists(String s) {
+    public boolean exists(String s) {
         Nodo temp = root;
         while (temp != null) {
             if (s == null) {
@@ -32,4 +61,15 @@ public boolean exists(String s) {
             temp = temp.getNext();
         }
         return false;
+    }
+
+    public String toString() {
+        String s = "La lista contiene: ";
+        Nodo temp = root;
+        while (temp != null) {
+            s += temp.getValue() + " - ";
+            temp = temp.getNext();
+        }
+        return s + "\n";
+    }
 }

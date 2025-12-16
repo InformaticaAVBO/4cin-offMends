@@ -1,16 +1,16 @@
 public class App {
     public static void main(String[] args){
         Lista l = new Lista();
-        l.addTail(new Nodo("Mario"));
-        l.addTail(new Nodo("Giulio"));
-        l.addHead(new Nodo("Francesco"));
-        l.add("Juve magica Juve");
+        l.addCoda(new Nodo("Mario"));
+        l.addCoda(new Nodo("Giulio"));
+        l.addTesta(new Nodo("Francesco"));
+        l.add("Napoli magica Napoli");
         System.out.println(l);
 
-        boolean esiste = l.exists("Mario");
-        System.out.println("Esiste 'Mario'? " + esiste);
+        boolean esiste = l.exists("Marco");
+        System.out.println("Esiste 'Marco'? " + esiste);
 
-        l.remove("Giulio");
-        System.out.println("Dopo remove 'Giulio': " + l);
+        l.remove("Mario");
+        System.out.println("Dopo remove 'Mario': " + l);
     }
 }
